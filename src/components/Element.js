@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardActionArea, CardMedia, Typography } from '@mui/material';
+import { styled } from '@mui/system';
 
 
 const Element = ({ image, name, clickHandle, clickable }) => {
@@ -12,10 +13,24 @@ const Element = ({ image, name, clickHandle, clickable }) => {
           image={image}
           alt="img"
         />
-        <Typography variant="h3">{name}</Typography>
+        <Kino variant="h3">{name}</Kino>
       </CardActionArea>
     </Card>
     )
 }
 
 export default Element
+
+const Kino = styled(Typography)({
+     
+   '@media (max-width: 768px)': {
+        fontSize: "40px",
+        padding: "5px"
+        
+
+    },
+    '@media (max-width: 425px)': {
+        fontSize: "25px",
+        padding: "5px"
+    }
+})

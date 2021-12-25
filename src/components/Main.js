@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <>
-    <Grid style={{whiteSpace: "nowrap", width: "100%", textAlign: "center"}} >
+    <Grid style={{textAlign: "center"}} >
       <Element 
         name="rock"
         image={rock}
@@ -75,10 +75,10 @@ export default function App() {
         clickHandle={clickHandle}
         clickable="true"
       />
-      <div style={{marginBottom: "30px", marginTop:"30px"}}>
+    </Grid>
+      <div style={{textAlign: "center", marginBottom: "30px", marginTop:"30px"}}>
       <Rules />
       </div>
-    </Grid>
     </>
   );
 }

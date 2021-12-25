@@ -3,6 +3,7 @@ import { Card, CardActionArea, CardMedia, Grid, Typography, Button } from '@mui/
 import React, { useEffect, useState } from "react";
 import { closeButton } from '../gameSlice';
 import { increaseTotalScore, decreaseTotalScore, getComputerAnswer, getUserAnswer, getUserImage, getComputerImage } from "../gameSlice";
+import { styled } from "@mui/system";
 
 const Result = () => {
 
@@ -51,7 +52,7 @@ const Result = () => {
         <>
             <Grid style={{whiteSpace: "nowrap", width: "100%", textAlign: "center"}} >
                 <Card style={{display: "inline-block", margin: "10px", width: "30%", maxWidth:"400px"}}>
-                <Typography  variant="h4">You picked:</Typography>
+                <Typography  style={{textAlign: "cneter"}} >You picked:</Typography>
                 <CardActionArea>
                     <CardMedia
                     name={userAnswer}
@@ -59,11 +60,11 @@ const Result = () => {
                     image={userImage}
                     alt={userAnswer}
                     />
-                    <Typography variant="h3">{userAnswer}</Typography>
+                    <Kino variant="h3">{userAnswer}</Kino>
                 </CardActionArea>
                 </Card>
                 <Card style={{display: "inline-block", margin: "10px", width: "30%", maxWidth:"400px"}}>
-                <Typography variant="h4">Computer picked:</Typography>
+                <Typography style={{textAlign: "center"}} >Comp picked:</Typography>
                 <CardActionArea>
                     <CardMedia
                     name={computerAnswer}
@@ -71,7 +72,7 @@ const Result = () => {
                     image={computerImage}
                     alt={computerAnswer}
                     />
-                    <Typography variant="h3">{computerAnswer}</Typography>
+                    <Kino variant="h3">{computerAnswer}</Kino>
                 </CardActionArea>
                 </Card>
                 <Typography padding="30px" variant="h3">{result}</Typography>
@@ -82,3 +83,18 @@ const Result = () => {
 }
 
 export default Result;
+
+
+const Kino = styled(Typography)({
+     
+    '@media (max-width: 768px)': {
+         fontSize: "40px",
+         padding: "5px"
+         
+ 
+     },
+     '@media (max-width: 425px)': {
+         fontSize: "25px",
+         padding: "5px"
+     }
+ })
